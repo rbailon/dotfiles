@@ -1,5 +1,5 @@
-# dotfiles
+# README
 Dotfiles customized
 
-## Probando subtitle
-Probando subir al server
+## Description 
+Keep and log changes to my custom configuration files
