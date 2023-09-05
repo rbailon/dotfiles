@@ -12,6 +12,7 @@ NC='\033[0m'
 declare -A depPack;
 depPack[/bin/zsh]=zsh
 depPack[/bin/nvim]=neovim
+depPack[/bin/curl]=curl
 
 declare -A depAddons;
 depAddons[~/.oh-my-zsh/oh-my-zsh.sh]=oh-my-zsh
