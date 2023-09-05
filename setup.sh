@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Cheking and install dependencies
-#
+# #####
 
 # COLORS
 #
@@ -53,9 +53,7 @@ do
         if [ $ANSWER == "y" ] || [ $ANSWER == "Y" ]; then
             case ${depAddons[$h]} in
                 oh-my-zsh)
-                    echo 1$SHELL
                     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-                    echo 2$SHELL
                     ;;
                 fzf)
                     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
