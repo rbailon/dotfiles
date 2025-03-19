@@ -1,0 +1,4 @@
+alias ssh='kitty +kitten ssh -A'
+alias sudo='sudo -E '
+alias nv='nvim'
+alias xfreerdp='xfreerdp3 /u:adminrb /d:aytotias '
