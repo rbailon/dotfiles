@@ -1,0 +1,23 @@
+TigerVNC Configuration file Version 1.0
+
+AlwaysCursor=true
+CursorType=Dot
+
+AutoSelect=0
+LowColorLevel=2
+PreferredEncoding=Tight
+CustomCompressLevel=0
+CompressLevel=2
+NoJPEG=0
+QualityLevel=8
+FullScreen=1
+FullScreenMode=all
+
+DesktopSize=1920x1080
+RemoteResize=1
+
+AcceptClipboard=1
+SendClipboard=1
+SendPrimary=1
+MenuKey=F8
+FullscreenSystemKeys=1
