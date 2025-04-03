@@ -32,10 +32,10 @@ local options={
     incsearch = true,                           -- activa la busqueda incremental
 
     -- Configuración de tabulación
-    tabstop = 4,                                -- espacios por tabulación
-    softtabstop = 4,                            -- espacios por tabulación (igora 'tabstop')
-    expandtab = true,                           -- inserta espacios en lugar del caracter tabulación
-    shiftwidth = 4,                             -- indentanción automática
+    tabstop = 2,                                -- espacios por tabulación
+    softtabstop = 2,                            -- espacios por tabulación (igora 'tabstop')
+    expandtab = false,                           -- inserta espacios en lugar del caracter tabulación
+    shiftwidth = 2,                             -- indentanción automática
 
     -- Mostrar números de línea y otros
     number = true,
