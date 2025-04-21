@@ -1,0 +1,19 @@
+# Perfil 1: Dockstation conectado (Portátil desactivado, Externos activados)
+profile dock {
+    # Desactiva la pantalla del portátil
+    output eDP-1 disable
+    # Activa el primer monitor externo (ajusta modo y posición)
+    output DP-4 enable mode 1920x1080 position 0,0
+    # Activa el segundo monitor externo (ajusta modo y posición)
+    output DP-3 enable mode 1920x1080 position 1920,0
+}
+
+# Perfil 2: Solo portátil (Portátil activado)
+profile laptop {
+    # Activa la pantalla del portátil (ajusta el modo si es necesario)
+    output eDP-1 enable mode 1920x1080 position 0,0
+    # Asegúrate de que los externos estén desactivados si solo quieres el portátil
+    # (kanshi normalmente desactiva los que no se mencionan o desaparecen)
+    # output DP-1 disable # Opcional, kanshi suele manejarlo
+    # output DP-2 disable # Opcional, kanshi suele manejarlo
+}
