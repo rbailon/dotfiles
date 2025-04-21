@@ -58,7 +58,7 @@ alias v='$EDITOR'
 alias vim='$EDITOR'
 alias sudo='sudo -E'
 alias xrdp='xfreerdp3 /u:adminrb /d:aytotias '
-alias ssh='kitty +kitten ssh -A'
+# alias ssh='kitty +kitten ssh -A'
 
 # -------------------------------------------------
 # AUTOSTART
