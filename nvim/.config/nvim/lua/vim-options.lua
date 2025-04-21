@@ -36,7 +36,7 @@ local options={
     softtabstop = 2,                            -- espacios por tabulación (igora 'tabstop')
     expandtab = false,                           -- inserta espacios en lugar del caracter tabulación
     shiftwidth = 2,                             -- indentanción automática
-
+		
     -- Mostrar números de línea y otros
     number = true,
     relativenumber = true,                      -- Numeros de linea relativos
