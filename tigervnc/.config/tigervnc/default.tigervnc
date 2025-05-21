@@ -13,8 +13,8 @@ QualityLevel=8
 FullScreen=0
 FullScreenMode=all
 
-DesktopSize=1800x1000
-RemoteResize=1
+#DesktopSize=1800x1000
+#RemoteResize=1
 
 AcceptClipboard=1
 SendClipboard=1
