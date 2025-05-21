@@ -8,6 +8,7 @@
 # Exports
 export EDITOR=nvim
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=$PATH:~/.local/bin
 
 
 # -------------------------------------------------
@@ -62,7 +63,7 @@ alias xrdp='xfreerdp3 /u:adminrb /d:aytotias '
 
 # -------------------------------------------------
 # AUTOSTART
-if [ -f /bin/hyprctl ]; then
-	fastfetch --config examples/12
-fi
+# if [ -f /bin/hyprctl ]; then
+# 	fastfetch --config examples/12
+# fi
 
