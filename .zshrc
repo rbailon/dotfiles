@@ -104,7 +104,6 @@ alias xrdp='xfreerdp3 /tls:seclevel:0 /size:1440x900 /size:1440x900 /size:1440x9
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(zoxide init zsh)"
 
 # -------------------------------------------------
 # AUTOSTART
@@ -115,5 +114,6 @@ eval "$(zoxide init zsh)"
 # -------------------------------------------------
 # Autoiniciar TMUX
 # if [[ -z "$TMUX" ]] && [[ -z "$SSH_CLIENT" ]]; then
-	# tmux attach -t base || tmux new -s base
+# 	tmux attach -t base || tmux new -s base
 # fi
+
