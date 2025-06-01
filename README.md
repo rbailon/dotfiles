@@ -1,11 +1,10 @@
 # README
-Dotfiles customized
+Dotfiles personalizados
 
 ## Description 
-Keep and log changes to my custom configuration files
+Conservar y registrar los cambios en mis archivos de configuración personalizados
 
 ## Requisitos (en Arch Linux)
-- hyprland
   - neovim: Editor de texto modal en terminal, moderno y altamente extensible (fork de Vim).
   - kanshi: Gestor automático de perfiles de pantalla según los monitores conectados (Wayland/X11).
   - Hyprland: Gestor de ventanas dinámico (tiling) para Wayland, enfocado en estética y animaciones.

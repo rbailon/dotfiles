@@ -1,0 +1,69 @@
+# Configuración básica de Alacritty en TOML
+
+# Fuente y tamaño
+[font]
+normal = { family = "Fira Code" }    # Fuente normal: Fira Code
+size = 13.0                          # Tamaño de fuente
+use_thin_strokes = true              # Habilitar ligaduras si la fuente lo soporta
+
+# Esquema de colores inspirado en One Dark
+[colors.primary]
+background = "0x282C34"              # Color de fondo
+foreground = "0xABB2BF"              # Color de texto
+
+[colors.normal]
+black   = "0x282C34"                 # Negro
+red     = "0xE06C75"                 # Rojo
+green   = "0x98C379"                 # Verde
+yellow  = "0xE5C07B"                 # Amarillo
+blue    = "0x61AFEF"                 # Azul
+magenta = "0xC678DD"                 # Magenta
+cyan    = "0x56B6C2"                 # Cian
+white   = "0xABB2BF"                 # Blanco
+
+[colors.bright]
+black   = "0x5C6370"                 # Negro brillante
+red     = "0xE06C75"                 # Rojo brillante
+green   = "0x98C379"                 # Verde brillante
+yellow  = "0xE5C07B"                 # Amarillo brillante
+blue    = "0x61AFEF"                 # Azul brillante
+magenta = "0xC678DD"                 # Magenta brillante
+cyan    = "0x56B6C2"                 # Cian brillante
+white   = "0xFFFFFF"                 # Blanco brillante
+
+# Configuración de la ventana
+[window]
+opacity = 0.95                     # Opacidad de la ventana (ligeramente translúcida)
+decorations = "full"               # Decoraciones de ventana completas
+
+# Configuración de la shell por defecto
+[shell]
+program = "/bin/zsh"               # Shell a utilizar (por ejemplo, zsh)
+args = ["--login"]                 # Argumentos que se pasan al shell
+
+# Mapeo de teclas personalizado
+[[key_bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"                   # Atajo para pegar
+
+[[key_bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"                    # Atajo para copiar
+
+[[key_bindings]]
+key = "Equals"
+mods = "Control"
+action = "IncreaseFontSize"        # Aumentar tamaño de fuente
+
+[[key_bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"        # Disminuir tamaño de fuente
+
+[[key_bindings]]
+key = "Zero"
+mods = "Control"
+action = "ResetFontSize"           # Restablecer tamaño de fuente
+

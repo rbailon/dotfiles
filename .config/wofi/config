@@ -1,0 +1,13 @@
+#show=drun
+mode=drun
+show-icons=true
+width=750
+height=400
+show_all=false
+term=kitty
+hide_scroll=true
+print_command=true
+insensitive=true
+allow-markup=false
+prompt=
+columns=2
