@@ -100,7 +100,8 @@ alias v='$EDITOR'
 alias vim='$EDITOR'
 alias c='clear'
 alias sudo='sudo -E'
-alias xrdp='xfreerdp3 /tls:seclevel:0 /size:1440x900 /size:1440x900 /size:1440x900 /size:1440x900 /size:1440x900 /size:1440x900 /size:1440x900 /u:adminrb /d:aytotias '
+alias xrdp='xfreerdp3 /tls:seclevel:0 /size:1440x900 /u:adminrb /d:aytotias '
+alias xrdph='xfreerdp3 /tls:seclevel:0 /size:1440x900 /u:administrador '
 
 # Shell integrations
 eval "$(fzf --zsh)"
