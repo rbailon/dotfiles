@@ -1,3 +1,24 @@
+"  --------------------------------------
+"  VARS
+"  --------------------------------------
+let data_dir = '~/.vim'
+
+"  --------------------------------------
+"  Comprobación de plugins e instalación
+"  --------------------------------------
+" Instalar vim-plug primero
+
+" ---- Comandos para Plugins (Ejemplo, si usas Vundle, Plug, etc.) ----
+call plug#begin('~/.vim/plugged')
+" Plug 'tpope/vim-fugitive' " Un plugin para Git
+ Plug 'tpope/vim-commentary' " Un plugin para poner comentarios
+call plug#end()
+
+" ---- Atajos para Comandos de Vim ----
+" Abrir archivo en un split horizontal
+" nnoremap <leader>s :split<CR>
+" Abrir archivo en un split vertical
+" nnoremap <leader>v :vsplit<CR>
 " ---- Opciones Básicas y Usabilidad ----
 
 set nocompatible         " Deshabilita el modo compatible con vi (esencial para muchas características)
@@ -37,15 +58,15 @@ set smartcase            " No ignora mayúsculas/minúsculas si la búsqueda con
 set scrolloff=8          " Mantiene 8 líneas de contexto al desplazarse
 set sidescrolloff=15     " Mantiene 15 columnas de contexto al desplazarse horizontalmente
 
-set colorcolumn=80       " Muestra una columna de referencia en la columna 80 (útil para limitar líneas)
+"set colorcolumn=80       " Muestra una columna de referencia en la columna 80 (útil para limitar líneas)
 
 " ---- Configuración de Apariencia ----
 
 colorscheme default      " Define el esquema de color (puedes probar otros como 'desert', 'blue', 'elflord', etc.)
                          " Para instalar más, necesitarías un gestor de plugins o copiarlos manualmente.
 
-set cursorline           " Resalta la línea actual
-set cursorcolumn         " Resalta la columna actual (puede ser pesado en terminales lentas, desactívalo si no te gusta)
+" set cursorline           " Resalta la línea actual
+" set cursorcolumn         " Resalta la columna actual (puede ser pesado en terminales lentas, desactívalo si no te gusta)
 
 " ---- Mapeos de Teclas (Key Mappings) ----
 
@@ -64,17 +85,3 @@ nnoremap <leader>rc :source ~/.vimrc<CR>
 nnoremap <leader>n :bnext<CR>
 nnoremap <leader>p :bprev<CR>
 
-" ---- Comandos para Plugins (Ejemplo, si usas Vundle, Plug, etc.) ----
-" Si planeas usar plugins (muy recomendado para extender Vim),
-" aquí es donde empezarías a configurarlos.
-" Por ejemplo, con vim-plug:
-" call plug#begin('~/.vim/plugged')
-" Plug 'tpope/vim-fugitive' " Un plugin para Git
-" call plug#end()
-" Tendrías que instalar vim-plug primero y luego ejecutar :PlugInstall en Vim.
-
-" ---- Atajos para Comandos de Vim ----
-" Abrir archivo en un split horizontal
-" nnoremap <leader>s :split<CR>
-" Abrir archivo en un split vertical
-" nnoremap <leader>v :vsplit<CR>
