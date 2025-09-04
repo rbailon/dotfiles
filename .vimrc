@@ -1,3 +1,9 @@
+" ##############################################################################
+" IMPORTANTE: Descargar el gestor de plugins para el correcto funcionamiento
+" Para ello ejecutar:
+"   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
 "  --------------------------------------
 "  VARS
 "  --------------------------------------
@@ -6,82 +12,85 @@ let data_dir = '~/.vim'
 "  --------------------------------------
 "  Comprobación de plugins e instalación
 "  --------------------------------------
-" Instalar vim-plug primero
 
-" ---- Comandos para Plugins (Ejemplo, si usas Vundle, Plug, etc.) ----
+" ---- Comandos para Plugins con vim-plug ----
+" Este bloque comprueba si vim-plug está instalado antes de intentar usarlo.
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
-" Plug 'tpope/vim-fugitive' " Un plugin para Git
- Plug 'tpope/vim-commentary' " Un plugin para poner comentarios
+
+" ---- Lista de tus plugins ----
+" Añade aquí todos los plugins que quieras. Ejemplos:
+" Plug 'tpope/vim-fugitive'      " Un plugin para Git
+Plug 'tpope/vim-commentary' " Un plugin para poner comentarios
+" Plug 'preservim/nerdtree'       " Un explorador de archivos
+" Plug 'vim-airline/vim-airline'  " Una barra de estado mejorada
+
 call plug#end()
 
-" ---- Atajos para Comandos de Vim ----
-" Abrir archivo en un split horizontal
-" nnoremap <leader>s :split<CR>
-" Abrir archivo en un split vertical
-" nnoremap <leader>v :vsplit<CR>
-" ---- Opciones Básicas y Usabilidad ----
+" ---- CÓDIGO AÑADIDO: Autoinstalación al iniciar Vim ----
+" Se ejecuta al abrir Vim, comprueba si faltan plugins y los instala.
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \ | PlugInstall --sync | source $MYVIMRC
+  \ | endif
 
-set nocompatible         " Deshabilita el modo compatible con vi (esencial para muchas características)
-filetype plugin indent on " Habilita la detección de tipo de archivo, plugins y sangría inteligente
+"  --------------------------------------
+"  Opciones Básicas y Usabilidad
+"  --------------------------------------
 
-syntax on                " Habilita el resaltado de sintaxis
-set number               " Muestra los números de línea
-set relativenumber       " Muestra números de línea relativos (útil para saltos)
-                         " Puedes comentar 'set number' si solo quieres relativenumber
+set nocompatible              " Deshabilita el modo compatible con vi
+filetype plugin indent on     " Habilita la detección de tipo de archivo, plugins y sangría
+syntax on                     " Habilita el resaltado de sintaxis
 
-set autoindent           " Auto-sangrado al crear nuevas líneas
-set smartindent          " Sangrado más inteligente basado en la sintaxis
-set tabstop=4            " Número de espacios que representa un tab
-set shiftwidth=4         " Número de espacios a usar para cada sangría (<<, >>)
-set expandtab            " Convierte tabs en espacios (muy recomendado)
+" ---- Apariencia del editor ----
+set number                    " Muestra los números de línea
+set relativenumber            " Muestra números de línea relativos
+set showmatch                 " Muestra el paréntesis, corchete o llave correspondiente
+set showcmd                   " Muestra el comando parcial en la última línea
+set scrolloff=8               " Mantiene 8 líneas de contexto al desplazarse
+set sidescrolloff=15          " Mantiene 15 columnas de contexto al desplazarse
+" set colorcolumn=80          " Muestra una columna de referencia en la columna 80
 
-set nowrap               " Evita que las líneas se rompan (envuelvan)
-set textwidth=0          " Deshabilita el auto-ajuste de línea
-set wrapmargin=0         " Deshabilita el margen de auto-ajuste
+" ---- Sangría y Espacios ----
+set autoindent
+set smartindent
+set tabstop=4                 " Un tab son 4 espacios
+set shiftwidth=4              " La sangría automática usa 4 espacios
+set expandtab                 " Convierte tabs en espacios
 
-set backspace=indent,eol,start " Permite borrar el sangrado, saltos de línea y al inicio de la línea
+" ---- Comportamiento general ----
+set nowrap                    " Evita que las líneas se rompan (envuelvan)
+set backspace=indent,eol,start " Permite borrar sobre sangrado, saltos de línea y el inicio
+set mouse=a                   " Habilita el uso del ratón en todos los modos
+set hidden                    " Permite cambiar de buffer sin guardar
+set ignorecase                " Ignora mayúsculas/minúsculas en la búsqueda
+set smartcase                 " No ignora mayúsculas si la búsqueda contiene mayúsculas
+set incsearch                 " Búsqueda incremental (resalta mientras escribes)
+set hlsearch                  " Resalta todas las coincidencias de búsqueda
 
-set mouse=a              " Habilita el uso del ratón en todos los modos (si tienes un terminal compatible)
+"  --------------------------------------
+"  Configuración de Apariencia
+"  --------------------------------------
+colorscheme default           " Define el esquema de color
 
-set hidden               " Permite tener varios buffers abiertos sin guardarlos
+"  --------------------------------------
+"  Mapeos de Teclas (Key Mappings)
+"  --------------------------------------
+let mapleader = ","           " Define la tecla 'leader' como la coma (¡haz esto ANTES de los mapeos!)
 
-set showmatch            " Muestra el paréntesis, corchete o llave correspondiente al escribir
-set showcmd              " Muestra el comando parcial en la última línea
-
-set incsearch            " Búsqueda incremental (resalta mientras escribes)
-set hlsearch             " Resalta todas las coincidencias de búsqueda
-" nnoremap <leader>s :nohlsearch<CR> " Mapeo para deshabilitar el resaltado de búsqueda (presiona ,s)
-
-set ignorecase           " Ignora mayúsculas/minúsculas en la búsqueda
-set smartcase            " No ignora mayúsculas/minúsculas si la búsqueda contiene mayúsculas
-
-set scrolloff=8          " Mantiene 8 líneas de contexto al desplazarse
-set sidescrolloff=15     " Mantiene 15 columnas de contexto al desplazarse horizontalmente
-
-"set colorcolumn=80       " Muestra una columna de referencia en la columna 80 (útil para limitar líneas)
-
-" ---- Configuración de Apariencia ----
-
-colorscheme default      " Define el esquema de color (puedes probar otros como 'desert', 'blue', 'elflord', etc.)
-                         " Para instalar más, necesitarías un gestor de plugins o copiarlos manualmente.
-
-" set cursorline           " Resalta la línea actual
-" set cursorcolumn         " Resalta la columna actual (puede ser pesado en terminales lentas, desactívalo si no te gusta)
-
-" ---- Mapeos de Teclas (Key Mappings) ----
-
-let mapleader = ","      " Define la tecla 'leader' como coma (muy útil para mapeos personalizados)
-
-" Mapeo para guardar rápidamente (presiona ,w)
+" ---- Mapeos personalizados ----
+" Deshabilitar resaltado de búsqueda
+nnoremap <leader>s :nohlsearch<CR>
+" Guardar
 nnoremap <leader>w :w<CR>
-
-" Mapeo para guardar y salir rápidamente (presiona ,q)
+" Guardar y salir
 nnoremap <leader>q :wq<CR>
-
-" Mapeo para recargar .vimrc (presiona ,rc)
+" Recargar .vimrc
 nnoremap <leader>rc :source ~/.vimrc<CR>
-
-" Navegación entre buffers (presiona ,n y ,p)
+" Navegación entre buffers
 nnoremap <leader>n :bnext<CR>
 nnoremap <leader>p :bprev<CR>
-
