@@ -101,6 +101,7 @@ alias vim='$EDITOR'
 alias c='clear'
 alias sudo='sudo -E'
 alias xrdp='xfreerdp3 /tls:seclevel:0 /size:1440x900 /u:adminrb /d:aytotias '
+alias xrdpl='xfreerdp3 /tls:seclevel:0 /size:1440x900 /u:adminrb /d:aytotiasl '
 alias xrdph='xfreerdp3 /tls:seclevel:0 /size:1440x900 /u:administrador '
 
 # Shell integrations
@@ -118,4 +119,3 @@ eval "$(zoxide init --cmd cd zsh)"
 # if [[ -z "$TMUX" ]] && [[ -z "$SSH_CLIENT" ]]; then
 # 	tmux attach -t base || tmux new -s base
 # fi
-
